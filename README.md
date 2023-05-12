@@ -59,6 +59,7 @@ We were using Ruby on Rails to create it.
 
 - **Create Ruby on Rails project**
 - **Project 1: Creating a data model.**
+- **Project 3: Processing data in models.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -140,7 +141,6 @@ Example command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - **Project 2: Validations and Model specs.**
-- **Project 3: Processing data in models.**
 - **Project 4: Setup and controllers.**
 - **Project 5: Controllers specs.**
 - **Project 6: Views.**
