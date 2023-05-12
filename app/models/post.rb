@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: :author_id
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  
+
   # The 5 most recent comments for a given post
   # @returns {Array<Comment>}
   def recent_comments
