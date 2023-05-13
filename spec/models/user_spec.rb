@@ -35,4 +35,13 @@ RSpec.describe User, type: :model do
       expect(@user.likes).to eq([])
     end
   end
+
+  describe 'recent posts by user' do
+    it 'should return the 3 most recent posts' do
+      5.times do |i|
+        Post.create(author: @user, title: "Post #{i}", text: "Post #{i} body")
+      end
+      expect(@user.recent_posts).to eq(@user.posts.order(created_at: :desc).limit(3))
+    end
+  end
 end
