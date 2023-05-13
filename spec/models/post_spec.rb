@@ -52,4 +52,13 @@ RSpec.describe Post, type: :model do
       expect(@post.author).to eq(@user)
     end
   end
+
+  describe 'recent comments' do
+    it 'should return the 5 most recent comments for a given post' do
+      6.times do |i|
+        Comment.create(author: @user, post: @post, text: "Comment #{i}")
+      end
+      expect(@post.recent_comments).to eq(@post.comments.order(created_at: :desc).limit(5))
+    end
+  end
 end
