@@ -4,8 +4,8 @@ class User < ApplicationRecord
   # A user has many comments
   # A user has many likes
   has_many :posts, foreign_key: :author_id, dependent: :destroy
-  has_many :comments, foreign_key: :author_id, through: :post, dependent: :destroy
-  has_many :likes, foreign_key: :author_id, through: :post, dependent: :destroy
+  has_many :comments, foreign_key: :author_id, dependent: :destroy
+  has_many :likes, foreign_key: :author_id, dependent: :destroy
 
   # Validation
   # Name must not be blank
