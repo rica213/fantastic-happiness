@@ -10,7 +10,7 @@ class Like < ApplicationRecord
   after_save :update_likes_count
 
   private
-  
+
   # Updates the likes counter for a post
   # @returns {Integer} the number of likes for a given post
   def update_likes_count
