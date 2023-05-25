@@ -26,26 +26,15 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(5)
   end
 
-  # Use of active record callback
-  # Update the comments counter every time a new comment
-  # is created for a given post
-  after_save :update_comments_count
+  # Update the posts counter every time a new post
+  # is created for a given user
+  after_save :update_posts_count
 
-  # Update the likes counter every time a new like
-  # is created for a given post
-  after_save :update_likes_count
-
+  # Updates the posts counter for a user
+  # @returns {Integer} the number of posts for a given user
   private
 
-  # Updates the comments counter for a post
-  # @returns {Integer} the number of comments for a given post
-  def update_comments_count
-    update(comments_count: comments.count)
-  end
-
-  # Updates the likes counter for a post
-  # @returns {Integer} the number of likes for a given post
-  def update_likes_count
-    update(likes_count: likes.count)
+  def update_posts_count
+    author.increment!(:posts_count)
   end
 end
