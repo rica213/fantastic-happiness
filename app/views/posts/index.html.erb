@@ -1,1 +1,16 @@
-<h1> Index page of the Post </h1>
+<main>
+<%= render 'shared/user', user:@user%>
+<section class='post_list'>
+    <% @posts.each do |post| %>
+      <%= render 'shared/post', post:post%>
+      <% unless post.recent_comments.empty? %>
+        <section class='comment_list'>
+          <% post.recent_comments.each do |comment| %>
+            <%= render 'shared/comment', comment:comment%>
+          <% end %>
+        </section>
+      <% end %>
+    <% end %>
+</section>
+<button type='button'>Pagination</button>
+</main>

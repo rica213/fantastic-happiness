@@ -1,1 +1,13 @@
-<h1> Show page of the Post </h1>
+<main>
+  <article class='post'>
+    <h2> <%= @post.title %> </h2>
+    <p> <%= @post.text %> </p>
+    <% unless @post.recent_comments.empty? %>
+      <section class='comment_list'>
+        <% @post.recent_comments.each do |comment| %>
+          <%= render 'shared/comment', comment:comment %>
+        <% end %>
+      </section>
+    <% end %>
+  </article>
+</main>
