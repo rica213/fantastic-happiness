@@ -1,13 +1,17 @@
 <main>
   <article class='post'>
-    <h2> <%= @post.title %> </h2>
-    <p> <%= @post.text %> </p>
-    <% unless @post.recent_comments.empty? %>
-      <section class='comment_list'>
-        <% @post.recent_comments.each do |comment| %>
-          <%= render 'shared/comment', comment:comment %>
-        <% end %>
+    <h2> <%= @post.title %> by <%= @user.name %></h2>
+    <section class='post_card__stat'>
+      <p> Comments: <%= @post.comments_count %> </p>
+      <p> Likes: <%= @post.likes_count %>
       </section>
-    <% end %>
-  </article>
-</main>
+      <p> <%= @post.text %> </p>
+      <% unless @post.recent_comments.empty? %>
+        <section class='comment_list'>
+          <% @post.recent_comments.each do |comment| %>
+            <%= render 'shared/comment', comment:comment %>
+          <% end %>
+        </section>
+      <% end %>
+    </article>
+  </main>
