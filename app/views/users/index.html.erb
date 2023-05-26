@@ -1,1 +1,7 @@
-<h1>This is the index page of the users controller</h1>
+<main>
+  <section class='user_list'>
+    <% @users.each do |user| %>
+      <%= render 'shared/user', user:user%>
+    <%end%>
+  </section>
+</main>

@@ -1,1 +1,15 @@
-<h1> This is the show page of the users controller </h1>
+<main>
+  <%= render 'shared/user', user:@user%>
+  <section class='bio'>
+    <h2> Bio </h2>
+    <p> <%= @user.bio %> </p>
+  </section>
+  <section class='posts'>
+    <% @user.recent_posts.each do |post| %>
+      <%= render 'shared/post', post:post %>
+    <% end %>
+  </section>
+  <button type='button'>
+    <%= link_to 'See all posts', user_posts_url(@user, @posts)%>
+  </button>
+</main>
