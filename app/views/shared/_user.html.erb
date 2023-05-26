@@ -1,0 +1,9 @@
+<section class='user_card'>
+  <div class='user_card__image'>
+    <%= image_tag user.photo %>
+  </div>
+  <div class='user_card__info'>
+    <h2><%= link_to user.name, user %></h2>
+    <p>Number of posts: <%= user.posts_count %></p>
+  </div>
+</section>

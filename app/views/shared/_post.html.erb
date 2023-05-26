@@ -1,0 +1,8 @@
+<section class='post_card'>
+  <h2> <%= link_to post.title, user_post_path(@user,post) %> </h2>
+  <p> <%= post.text.slice(0,40) %>... </p>
+  <section class='post_card__stat'>
+    <p> Comments: <%= post.comments_count %> </p>
+    <p> Likes: <%= post.likes_count %>
+  </section>
+</section>
