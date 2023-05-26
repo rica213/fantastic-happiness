@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
+  # create a user to use in our tests
+  user = User.create(name: 'Bunny', photo: 'https://somewhere.com/an_ordinary_photo.jpg', bio: 'Anyone in this world')
+  user.save
+
   describe 'GET /' do
     it 'should return the root page' do
       get '/'
@@ -23,29 +27,26 @@ RSpec.describe 'Users', type: :request do
     # check the response body includes correct placeholder text
     it 'should include correct placeholder text in the response body' do
       get '/users'
-      expect(response.body).to include(`<h1>This is the index page of the users controller</h1>`)
+      expect(response.body).to include(user.name)
     end
   end
   describe 'GET /users/:id ___ users show' do
     # check response status is correct
     it 'should return the correct http status' do
-      user_id = 1
-      get "/users/#{user_id}"
+      get "/users/#{user.id}"
       expect(response).to have_http_status(200)
     end
 
     # check correct template is rendered
     it 'should render the correct template' do
-      user_id = 1
-      get "/users/#{user_id}"
+      get "/users/#{user.id}"
       expect(response).to render_template(:show)
     end
 
     # check the response body includes correct placeholder text
     it 'should include correct placeholder text in the response body' do
-      user_id = 1
-      get "/users/#{user_id}"
-      expect(response.body).to include(`<h1>This is the show page of the users controller</h1>`)
+      get "/users/#{user.id}"
+      expect(response.body).to include(user.name)
     end
   end
 end
