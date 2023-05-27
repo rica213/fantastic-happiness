@@ -33,6 +33,7 @@ class PostsController < ApplicationController
 
   private
 
+  # Whitelist and extract the allowed parameters
   def post_params
     params.require(:post).permit(:title, :text)
   end
