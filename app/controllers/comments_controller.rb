@@ -9,9 +9,9 @@ class CommentsController < ApplicationController
     @comment.post_id = params[:post_id]
 
     if @comment.save
-      redirect_to user_posts_path, notice: "Comment created successfully."
+      redirect_to user_posts_path, notice: 'Comment created successfully.'
     else
-      render :new, notice: "Comment failed to be created."
+      render :new, notice: 'Comment failed to be created.'
     end
   end
 

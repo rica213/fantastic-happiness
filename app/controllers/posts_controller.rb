@@ -23,8 +23,8 @@ class PostsController < ApplicationController
     @post.author = current_user
 
     if @post.save
-    # if post saved, redirect to the user's posts and render success message
-    redirect_to user_posts_path(current_user), notice: 'Post created successfully.'
+      # if post saved, redirect to the user's posts and render success message
+      redirect_to user_posts_path(current_user), notice: 'Post created successfully.'
     else
       # if post not saved, render new template and render error message
       render :new, notice: 'Post could not be created.'
