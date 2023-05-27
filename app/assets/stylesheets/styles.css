@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+main {
+  margin: 1rem;
+}
+
+.user_list {
+  display: flex;
+  flex-direction: column;
+}
+
+.user_card {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.user_card__image img {
+  width: 100px;
+  height: 100px;
+}
+
+.post_card__stat {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
