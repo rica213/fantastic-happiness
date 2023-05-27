@@ -1,5 +1,5 @@
 <%= form_with model: @post, url: user_posts_path, method: :post, local: true, scope: :post do |f| %>
-  <div class='new_post_form'>
+  <div class='post_form'>
     <div class='field'>
       <%= f.label :title %>
       <%= f.text_field :title %>
