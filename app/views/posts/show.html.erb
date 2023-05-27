@@ -14,4 +14,14 @@
         </section>
       <% end %>
     </article>
+    <section class='crud_btn'>
+      <button type='button'>
+        <%= link_to 'Add New Comment', new_user_post_comment_path(@post.author, @post) %>
+      </button>
+      <section class='like_form'>
+        <%= form_with model: Like, url: user_post_likes_path(@post.author, @post) do |f| %>
+          <%= f.submit 'Like Post' %>
+        <% end %>
+      </section>
+    </section>
   </main>
