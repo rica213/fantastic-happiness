@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
- # before_action :authenticate_user!, only: [:new]
   def index
     @user = User.find(params[:user_id])
     # retrieve posts associated to @user and
@@ -16,5 +15,25 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+  end
+
+  def create
+    # create a new post associated to the current_user
+    @post = current_user.posts.create(post_params)
+    @post.author = current_user
+
+    if @post.save
+    # if post saved, redirect to the user's posts and render success message
+    redirect_to user_posts_path(current_user), notice: 'Post created successfully.'
+    else
+      # if post not saved, render new template and render error message
+      render :new, notice: 'Post could not be created.'
+    end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
   end
 end
