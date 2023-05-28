@@ -1,16 +1,19 @@
 <main>
-<%= render 'shared/user', user:@user%>
-<section class='post_list'>
+  <%= render 'shared/user', user:@user%>
+  <section class='post_list'>
     <% @posts.each do |post| %>
-      <%= render 'shared/post', post:post%>
-      <% unless post.recent_comments.empty? %>
-        <section class='comment_list'>
-          <% post.recent_comments.each do |comment| %>
-            <%= render 'shared/comment', comment:comment%>
-          <% end %>
-        </section>
-      <% end %>
+      <section class='post_item'>
+        <%= render 'shared/post', post:post%>
+        <% unless post.recent_comments.empty? %>
+          <h4>Comments</h4>
+          <section class='comment_list'>
+            <% post.recent_comments.each do |comment| %>
+              <%= render 'shared/comment', comment:comment%>
+            <% end %>
+          </section>
+        <% end %>
+      </section>
     <% end %>
-</section>
-<button type='button'>Pagination</button>
+  </section>
+  <button type='button'>Pagination</button>
 </main>

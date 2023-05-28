@@ -1,27 +1,28 @@
 <main>
   <article class='post'>
-    <h2> <%= @post.title %> by <%= @user.name %></h2>
+    <h2> <%= @post.title %> by <%= link_to @user.name, @user %></h2>
     <section class='post_card__stat'>
       <p> Comments: <%= @post.comments_count %> </p>
-      <p> Likes: <%= @post.likes_count %>
-      </section>
-      <p> <%= @post.text %> </p>
-      <% unless @post.comments.empty? %>
-        <section class='comment_list'>
-          <% @post.comments.each do |comment| %>
-            <%= render 'shared/comment', comment:comment %>
-          <% end %>
-        </section>
-      <% end %>
-    </article>
-    <section class='crud_btn'>
-      <button type='button'>
-        <%= link_to 'Add New Comment', new_user_post_comment_path(@post.author, @post) %>
-      </button>
-      <section class='like_form'>
-        <%= form_with model: Like, url: user_post_likes_path(@post.author, @post) do |f| %>
-          <%= f.submit 'Like Post' %>
+      <p> Likes: <%= @post.likes_count %> </p>
+    </section>
+    <p class='post_body'> <%= @post.text %> </p>
+    <% unless @post.comments.empty? %>
+      <h4> Comments </h4>
+      <section class='comment_list'>
+        <% @post.comments.each do |comment| %>
+          <%= render 'shared/comment', comment:comment %>
         <% end %>
       </section>
+    <% end %>
+  </article>
+  <section class='crud_btn'>
+    <button type='button'>
+      <%= link_to 'Add New Comment', new_user_post_comment_path(@post.author, @post) %>
+    </button>
+    <section class='like_form'>
+      <%= form_with model: Like, url: user_post_likes_path(@post.author, @post) do |f| %>
+        <%= f.submit 'Like 👍🏽' %>
+      <% end %>
     </section>
-  </main>
+  </section>
+</main>

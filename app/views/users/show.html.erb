@@ -1,15 +1,15 @@
 <main>
   <%= render 'shared/user', user:@user%>
-  <section class='bio'>
+  <section class='user_bio'>
     <h2> Bio </h2>
     <p> <%= @user.bio %> </p>
   </section>
-  <section class='posts'>
+  <section class='recent_posts'>
     <% @user.recent_posts.each do |post| %>
       <%= render 'shared/post', post:post %>
     <% end %>
   </section>
-  <button type='button'>
-    <%= link_to 'See all posts', user_posts_url(@user, @posts)%>
+  <button type='button' class='all_posts_btn'>
+    <%= link_to 'See All Posts', user_posts_url(@user, @posts)%>
   </button>
 </main>
