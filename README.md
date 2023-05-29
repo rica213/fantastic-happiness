@@ -10,21 +10,21 @@
 
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Fantastic Happiness ](#-fantastic-happiness-)
-  - [🛠 Built With ](#-built-with-)
-    - [Tech Stack ](#tech-stack-)
-  - [Key Features ](#key-features-)
-  - [💻 Getting Started ](#-getting-started-)
-    - [Prerequisites](#prerequisites)
-    - [Setup](#setup)
-    - [Install](#install)
-    - [Usage](#usage)
-    - [Run tests](#run-tests)
-  - [👥 Authors ](#-authors-)
-  - [🔭 Future Features ](#-future-features-)
-  - [🤝 Contributing ](#-contributing-)
-  - [⭐️ Show your support ](#️-show-your-support-)
-  - [🙏 Acknowledgments ](#-acknowledgments-)
-  - [📝 License ](#-license-)
+- [🛠 Built With ](#-built-with-)
+  - [Tech Stack ](#tech-stack-)
+- [🎲 Key Features ](#-key-features-)
+- [💻 Getting Started ](#-getting-started-)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+- [👥 Authors ](#-authors-)
+- [🔭 Future Features ](#-future-features-)
+- [🤝 Contributing ](#-contributing-)
+- [⭐️ Show your support ](#️-show-your-support-)
+- [🙏 Acknowledgments ](#-acknowledgments-)
+- [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -34,9 +34,9 @@
 It has a user-friendly UI and it is an accessible application. <br>
 We were using Ruby on Rails to create it.
 
-## 🛠 Built With <a name="built-with"></a>
+# 🛠 Built With <a name="built-with"></a>
 
-### Tech Stack <a name="tech-stack"></a>
+## Tech Stack <a name="tech-stack"></a>
 
 <details>
   <summary>Server</summary>
@@ -55,7 +55,7 @@ We were using Ruby on Rails to create it.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- Features -->
 
-## Key Features <a name="key-features"></a>
+# 🎲 Key Features <a name="key-features"></a>
 
 - **Create Ruby on Rails project**
 - **Project 1: Creating a data model.**
@@ -70,12 +70,12 @@ We were using Ruby on Rails to create it.
 
 <!-- GETTING STARTED -->
 
-## 💻 Getting Started <a name="getting-started"></a>
+# 💻 Getting Started <a name="getting-started"></a>
 
 
 To get a local copy up and running, follow these steps.
 
-### Prerequisites
+## Prerequisites
 
 In order to run this project you need:
 
@@ -85,7 +85,7 @@ Example command:
  gem install rails
 ```
 
-### Setup
+## Setup
 
 Clone this repository to your desired folder:
 
@@ -96,7 +96,7 @@ Example commands:
   git clone git@github.com:rica213/fantastic-happiness.git
 ```
 
-### Install
+## Install
 
 Install this project with:
 
@@ -107,7 +107,7 @@ Example command:
   gem install
 ```
 
-### Usage
+## Usage
 
 To run the project, execute the following command:
 
@@ -117,7 +117,7 @@ Example command:
   rails server
 ```
 
-### Run tests
+## Run tests
 
 To run tests, run the following command:
 
@@ -131,7 +131,7 @@ Example command:
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
+# 👥 Authors <a name="authors"></a>
 
 🕵🏽‍♀️ **Clarielle Larissa**
 
@@ -143,7 +143,7 @@ Example command:
 
 <!-- FUTURE FEATURES -->
 
-## 🔭 Future Features <a name="future-features"></a>
+# 🔭 Future Features <a name="future-features"></a>
 
 - **Project 8: Integration specs for Views and fixing n+1 problems.**
 - **Project 9: Add Devise.**
@@ -154,7 +154,7 @@ Example command:
 
 <!-- CONTRIBUTING -->
 
-## 🤝 Contributing <a name="contributing"></a>
+# 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
@@ -164,7 +164,7 @@ Feel free to check the [issues page](../../issues/).
 
 <!-- SUPPORT -->
 
-## ⭐️ Show your support <a name="support"></a>
+# ⭐️ Show your support <a name="support"></a>
 
 If you like this project kindly show some love, give it a 🌟 **STAR** 🌟
 
@@ -172,7 +172,7 @@ If you like this project kindly show some love, give it a 🌟 **STAR** 🌟
 
 <!-- ACKNOWLEDGEMENTS -->
 
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
+# 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank: 
 - Microverse
@@ -183,7 +183,7 @@ I would like to thank:
 
 <!-- LICENSE -->
 
-## 📝 License <a name="license"></a>
+# 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
 
