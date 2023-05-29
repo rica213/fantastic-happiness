@@ -124,7 +124,7 @@ To run tests, run the following command:
 Example command:
 
 ```sh
-  bin/rails test test/models/post_test.rb
+  rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
