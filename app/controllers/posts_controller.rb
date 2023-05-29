@@ -3,7 +3,12 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     # retrieve posts associated to @user and
     # eager-loading the associated comments
-    @posts = @user.posts.includes(:comments)
+    @posts = @user.posts.includes(comments: [:author])
+  rescue ActiveRecord::RecordNotFound
+    # Handle the case where the user is not found
+    # Redirect to the root page
+    flash[:error] = 'User not found.'
+    redirect_to root_path
   end
 
   def show
