@@ -33,7 +33,7 @@ RSpec.describe 'User View', type: :feature do
 
   # checks the user's first 3 posts can be seen
   it 'should render the first 3 posts of the user' do
-    # create a posts to use in our tests
+    # create a posts to use in our test
     posts = [
       { title: 'trail',
         text: 'answer bent visitor raw stock elephant roof supper numeral bend previous donkey stand wild there' },
@@ -50,5 +50,28 @@ RSpec.describe 'User View', type: :feature do
     posts.first(3).each do |post|
       expect(page).to have_content(post[:title])
     end
+  end
+
+  # checks the button that lets view all of a user's posts can be seen
+  it 'should render the button that lets view all of a user\'s posts' do
+    visit user_path(@user)
+    expect(page).to have_css('button.all_posts_btn')
+  end
+
+  # checks the link to the user's post redirects to that post's show page
+  it 'should redirect to the post show page' do
+    # create a post to use in our test
+    post = Post.create(author: @user, title: 'Nonsense', text: 'This guy should stop spitting bullshit')
+    post.save
+    visit user_path(@user)
+    click_link post.title
+    expect(page).to have_current_path(user_post_path(user_id: @user.id, id: post.id))
+  end
+
+  # checks the button see all posts redirects to the user's post's index page
+  it 'should redirect to the user\'s post index page' do
+    visit user_path(@user)
+    click_link 'See All Posts'
+    expect(page).to have_current_path(user_posts_path(@user))
   end
 end
