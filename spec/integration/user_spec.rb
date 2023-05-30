@@ -6,9 +6,11 @@ describe 'testing users/index', type: :feature do
   before(:each) do
     @user1 = User.create(name: 'Mert', photo: 'https://somewhere.com/an_ordinary_photo.jpg', bio: 'Web Developer guy')
 
-    @user2 = User.create(name: 'Larissa', photo: 'https://somewhere.com/an_ordinary_photo.jpg', bio: 'Bee keeper and bee lover')
+    @user2 = User.create(name: 'Larissa', photo: 'https://somewhere.com/an_ordinary_photo.jpg',
+                         bio: 'Bee keeper and bee lover')
 
-    @user3 = User.create(name: 'Burak', photo: 'https://somewhere.com/an_ordinary_photo.jpg', bio: 'Software developer from Turkey')
+    @user3 = User.create(name: 'Burak', photo: 'https://somewhere.com/an_ordinary_photo.jpg',
+                         bio: 'Software developer from Turkey')
 
     @users = User.all
     visit users_path
