@@ -176,15 +176,16 @@ button,
 /*
   Navigation
 */
-header h1,
-header .navigation {
-  margin: 0.5rem;
-  margin-left: 1rem;
-}
 
 .navigation {
   display: flex;
   gap: 1rem;
   list-style: none;
   cursor: pointer;
+}
+
+header h1,
+header .navigation {
+  margin: 0.5rem;
+  margin-left: 1rem;
 }
