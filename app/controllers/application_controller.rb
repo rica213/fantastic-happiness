@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protected
 
   # customize the parameters that can be submitted during the sign-up process
-  def configure_permitted_parameters 
+  def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 end
