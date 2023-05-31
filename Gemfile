@@ -57,8 +57,10 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  # gem 'bullet'
   gem 'web-console'
+  
+  # Use the bullet gem to detect and diagnose database-related performance issues
+  gem 'bullet'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -74,4 +76,8 @@ group :test do
   gem 'webdrivers'
 end
 
+# Use the rubocop gem to check the code style and format the code
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+# Use the devise gem as the session and account manager for the application
+gem 'devise'
