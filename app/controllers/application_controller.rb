@@ -1,6 +1,11 @@
 class ApplicationController < ActionController::Base
-  # Make current user data available to all controllers
-  def current_user
-    User.first!
+  before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  # customize the parameters that can be submitted during the sign-up process
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 end

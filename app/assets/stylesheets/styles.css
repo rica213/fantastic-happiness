@@ -14,8 +14,9 @@ html {
   color: white;
 }
 
-main {
-  margin: 1rem;
+main,
+form {
+  margin: 1rem auto;
 }
 
 a {
@@ -166,9 +167,45 @@ button,
 .field {
   display: flex;
   flex-direction: column;
-  width: 50%;
+}
+
+.form_title,
+.actions,
+.field {
+  width: 75%;
+  margin: 0.5rem auto;
+}
+
+.field input {
+  padding: 0.5rem 1rem;
+}
+
+.remember_me_field {
+  flex-direction: row;
 }
 
 .comment_form {
   margin: 1rem;
+}
+
+.actions * {
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+/*
+  Navigation
+*/
+
+.navigation {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+header h1,
+header .navigation {
+  margin: 0.5rem;
+  margin-left: 1rem;
 }
