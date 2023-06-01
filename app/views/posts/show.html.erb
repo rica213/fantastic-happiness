@@ -25,4 +25,15 @@
       <% end %>
     </section>
   </section>
+
+  </div>
+    <% if can?(:destroy, comment)%>
+      <%= link_to user_post_comment_path(@user, comment.post, comment.id), data: {
+        turbo_method: :delete
+      } do %>
+        <button><%= t('.Delete Comment') %></button>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 </main>
