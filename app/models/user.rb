@@ -2,8 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable
-  # Associations
+         :recoverable, :rememberable, :validatable
   # A user has many posts
   # A user has many comments
   # A user has many likes
@@ -22,5 +21,10 @@ class User < ApplicationRecord
   # @returns {Array<Post>}
   def recent_posts
     posts.order(created_at: :desc).limit(3)
+  end
+
+  # Check whether the user is an admin or not
+  def admin?
+    role == 'admin'
   end
 end
