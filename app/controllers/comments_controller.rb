@@ -24,9 +24,16 @@ class CommentsController < ApplicationController
     @comment.post_id = params[:post_id]
 
     if @comment.save
-      redirect_to user_posts_path, notice: 'Comment created successfully.'
+      respond_to do |format|
+        format.html {redirect_to user_posts_path(@post.author, @post), notice: 'Comment created successfully.' }
+        format.json { render json: @comment, status: :created}
+      end
+
     else
-      render :new, notice: 'Comment failed to be created.'
+      respond_to do |format|
+        format.html { render :new, notice: 'Comment failed to be created.' }
+        format.json { render json: @comment.errors, status: :unprocessable_entry }
+      end
     end
   end
 

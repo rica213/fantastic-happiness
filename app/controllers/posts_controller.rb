@@ -26,6 +26,11 @@ class PostsController < ApplicationController
     # retrieve the post associated to @user and
     # eager-loading the associated comments
     @post = @user.posts.includes(:comments).find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: post}
+    end
   end
 
   def new
