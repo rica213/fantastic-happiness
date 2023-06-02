@@ -24,16 +24,8 @@
         <%= f.submit 'Like 👍🏽' %>
       <% end %>
     </section>
-  </section>
-
-  </div>
-    <% if can?(:destroy, comment)%>
-      <%= link_to user_post_comment_path(@user, comment.post, comment.id), data: {
-        turbo_method: :delete
-      } do %>
-        <button><%= t('.Delete Comment') %></button>
-        <% end %>
-      <% end %>
+    <% if can? :destroy, @post %>
+      <%= button_to 'Delete post', user_post_path(@user, @post), method: :delete %>
     <% end %>
-  </div>
+  </section>
 </main>
