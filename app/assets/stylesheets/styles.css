@@ -134,10 +134,6 @@ button,
   font-weight: 700;
 }
 
-.all_posts_btn {
-  transform: translateX(100%);
-}
-
 .post {
   color: white;
   margin: 1rem;
