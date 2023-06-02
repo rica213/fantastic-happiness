@@ -1,11 +1,18 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
 
+  # GET /users/:user_id/posts
   def index
     @user = User.find(params[:user_id])
     # retrieve posts associated to @user and
     # eager-loading the associated comments
     @posts = @user.posts.includes(comments: [:author])
+
+    # api endpoint to list all posts for a user
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
+    end
   rescue ActiveRecord::RecordNotFound
     # Handle the case where the user is not found
     # Redirect to the root page
@@ -13,11 +20,17 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  # GET /users/:user_id/posts/:id
   def show
     @user = User.find(params[:user_id])
     # retrieve the post associated to @user and
     # eager-loading the associated comments
     @post = @user.posts.includes(:comments).find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: post }
+    end
   end
 
   def new

@@ -68,6 +68,7 @@ We were using Ruby on Rails to create it.
 - **Project 8: Integration specs for Views and fixing n+1 problems.**
 - **Project 9: Add Devise.**
 - **Project 10: Add authorization rules.**
+- **Project 11: Add API endpoints.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -148,7 +149,6 @@ Example command:
 
 # 🔭 Future Features <a name="future-features"></a>
 
-- **Project 11: Add API endpoints.**
 - **Exercise: API documentation.**
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
