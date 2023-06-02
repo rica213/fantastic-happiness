@@ -15,10 +15,13 @@
       </section>
     <% end %>
   </section>
-  <button type='button' class='pagination'>Pagination</button>
-  <% if can? :destroy, post %>
-    <%= button_to 'Delete post', user_post_path(@user, post), method: :delete,
-      data : {
-        confirm: 'Are you sure?'
-    } %>
+  <section class='crud_btn'>
+    <button type='button' class='pagination'>Pagination</button>
+    <%# Create a new post %>
+    <% if can? :create, Post %>
+      <button type='button' class='new_post_btn'>
+        <%= link_to 'Create New Post', new_user_post_url(@user) %>
+      </button>
+    <% end %>
+  </section>
 </main>
