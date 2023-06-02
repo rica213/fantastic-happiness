@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   # user_post_comments
   # GET /users/:user_id/posts/:post_id/comments
   def index
@@ -11,7 +10,7 @@ class CommentsController < ApplicationController
     render json: @comments
   end
 
-  # new_user_post_comment 
+  # new_user_post_comment
   # GET /users/:user_id/posts/:post_id/comments/new
   def new
     @comment = Comment.new
@@ -29,7 +28,6 @@ class CommentsController < ApplicationController
     else
       render :new, notice: 'Comment failed to be created.'
     end
-    
   end
 
   # DELETE /users/:user_id/posts/:id
