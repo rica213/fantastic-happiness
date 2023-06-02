@@ -24,5 +24,8 @@
         <%= f.submit 'Like 👍🏽' %>
       <% end %>
     </section>
+    <% if can? :destroy, @post %>
+      <%= button_to 'Delete post', user_post_path(@user, @post), method: :delete %>
+    <% end %>
   </section>
 </main>

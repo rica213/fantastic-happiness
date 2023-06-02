@@ -9,7 +9,15 @@
       <%= render 'shared/post', post:post %>
     <% end %>
   </section>
+  <section class='crud_btn'>
   <button type='button' class='all_posts_btn'>
     <%= link_to 'See All Posts', user_posts_url(@user, @posts)%>
   </button>
+  <%# Create a new post %>
+  <% if can? :create, Post %>
+    <button type='button' class='new_post_btn'>
+      <%= link_to 'Create New Post', new_user_post_url(@user) %>
+    </button>
+  <% end %>
+  </section>
 </main>

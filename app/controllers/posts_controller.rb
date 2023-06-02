@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     # retrieve posts associated to @user and
@@ -34,6 +36,17 @@ class PostsController < ApplicationController
       # if post not saved, render new template and render error message
       render :new, notice: 'Post could not be created.'
     end
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
+
+    @post.likes.destroy_all
+    @post.comments.destroy_all
+    @post.destroy
+
+    redirect_to user_posts_path(@user)
   end
 
   private

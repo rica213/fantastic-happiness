@@ -9,6 +9,7 @@ class Comment < ApplicationRecord
   # Update the comments counter every time a new comment
   # is created for a given post
   after_save :update_comments_count
+  after_destroy :decrease_comments_count
 
   private
 
@@ -16,5 +17,9 @@ class Comment < ApplicationRecord
   # @returns {Integer} the number of comments for a given post
   def update_comments_count
     post.increment!(:comments_count)
+  end
+
+  def decrease_comments_count
+    post.decrement!(:comments_count)
   end
 end

@@ -18,5 +18,12 @@ module RailsStartup
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.assets.enable = true
+    # Allows assets to be compiled on-the-fly if they are not found in the precompiled assets
+    config.assets.compile = false
+
+    config.assets.paths << Rails.root.join("app", "assets", "javascripts")
+
   end
 end
