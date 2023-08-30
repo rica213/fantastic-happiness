@@ -83,6 +83,9 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
+- Ruby 3.2.2 installed
+- rails 7 installed
+
 Example command:
 
 ```sh
@@ -108,7 +111,7 @@ Example command:
 
 ```sh
   cd fantastic-happiness
-  gem install
+  bundle install
 ```
 
 ## Usage
