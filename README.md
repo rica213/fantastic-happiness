@@ -145,6 +145,13 @@ Example command:
 - GitHub: [@rica213](https://github.com/rica213)
 - Twitter: [@alc3and](https://twitter.com/alc3and)
 - LinkedIn: [Clarielle Larissa](https://linkedin.com/in/larissa-clarielle)
+ 
+# 👥 Collaborators
+
+🙂 **Mert Kantaroglu**
+
+- GitHub: [mertkantaroglu](https://github.com/mertkantaroglu)
+- LinkedIn: [mert-kantaroglu](https://www.linkedin.com/in/mert-kantaroglu/) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
