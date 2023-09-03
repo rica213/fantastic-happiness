@@ -84,3 +84,5 @@ gem 'devise'
 
 # Use the cancancan gem to add authorization
 gem 'cancancan'
+
+gem "tailwindcss-rails", "~> 2.0"
